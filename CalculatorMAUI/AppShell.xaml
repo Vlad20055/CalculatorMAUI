@@ -17,4 +17,10 @@
         ContentTemplate="{DataTemplate local:CalculatorPage}"
         Route="CalculatorPage" />
 
+    <ShellContent
+        Title="ProgresDemo"
+        ContentTemplate="{DataTemplate local:ProgresDemo}"
+        Route="ProgresDemo" />
+    
+
 </Shell>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculatorMAUI.ProgresDemo"
+             Title="ProgresDemo">
+
+    <Grid RowDefinitions="Auto,*,Auto" 
+          ColumnDefinitions="*"
+          Padding="20">
+
+        <Label 
+               x:Name="headerLabel"
+               Text="Tap START to begin calculation.&#10;Tap CANCEL to stop calculation."
+               Grid.Row="0"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               FontSize="24"
+               TextColor="Black"
+               LineBreakMode="WordWrap"
+               MaxLines="2"/>
+
+        <Grid Grid.Row="1"
+              ColumnDefinitions="*,Auto"
+              HorizontalOptions="Center"
+              VerticalOptions="Center">
+
+            <ProgressBar x:Name="progressBar"
+                         Progress="0"
+                         HeightRequest="40"
+                         WidthRequest="200"
+                         HorizontalOptions="End"
+                         VerticalOptions="Center"/>
+
+            <Label x:Name="progressLabel"
+                   Grid.Column="1"
+                   Text="0%"
+                   FontSize="24"
+                   TextColor="Black"
+                   Margin="20,0,0,0"
+                   VerticalOptions="Center"/>
+        </Grid>
+
+        
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*,Auto,Auto,*"
+              HorizontalOptions="Center"
+              VerticalOptions="End"
+              Margin="0,40">
+
+            <Button x:Name="startButton"
+                    Text="START"
+                    Grid.Column="1"
+                    WidthRequest="160"
+                    HeightRequest="60"
+                    Margin="0,0,20,0"
+                    FontSize="30"
+                    CornerRadius="30"
+                    BackgroundColor="#4285F4"
+                    TextColor="Black"
+                    Clicked="startButton_Clicked"/>
+
+            <Button x:Name="cancelButton"
+                    Text="CANCEL"
+                    Grid.Column="2"
+                    WidthRequest="160"
+                    HeightRequest="60"
+                    FontSize="30"
+                    CornerRadius="30"
+                    BackgroundColor="#EA4335"
+                    TextColor="Black"
+                    Clicked="cancelButton_Clicked"/>
+        </Grid>
+    </Grid>
+</ContentPage>
