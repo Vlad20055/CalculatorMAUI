@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CalculatorMAUI.Services;
+using Microsoft.Extensions.Logging;
 
 namespace CalculatorMAUI
 {
@@ -15,8 +16,12 @@ namespace CalculatorMAUI
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddTransient<IDbService, SQLiteService>();
+            builder.Services.AddTransient<SQLiteDemo>();
+
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

@@ -21,6 +21,11 @@
         Title="ProgresDemo"
         ContentTemplate="{DataTemplate local:ProgresDemo}"
         Route="ProgresDemo" />
-    
+
+    <ShellContent
+        Title="SQLiteDemo"
+        ContentTemplate="{DataTemplate local:SQLiteDemo}"
+        Route="SQLiteDemo" />
+
 
 </Shell>
