@@ -41,7 +41,7 @@ public partial class CalculatorPage : ContentPage
             return;
         }
 
-        if (this.result.Text == "NaN" || this.result.Text == "∞") return;
+        if (this.result.Text == "NaN" || this.result.Text == "∞" || this.result.Text == "-∞") return;
 
         if (double.Parse(this.result.Text) == 0)
         {
@@ -256,7 +256,8 @@ public partial class CalculatorPage : ContentPage
         if (is_dot_pushed() ||
             (bin_operation != "" && state == State.NotModified) ||
             this.result.Text == "NaN" ||
-            this.result.Text == "∞")
+            this.result.Text == "∞" || 
+            this.result.Text == "-∞")
         {
             return;
         }
