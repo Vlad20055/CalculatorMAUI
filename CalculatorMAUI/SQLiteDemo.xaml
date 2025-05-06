@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ent="clr-namespace:CalculatorMAUI.Entities"
              x:Class="CalculatorMAUI.SQLiteDemo"
              Title="Project Tasks"
              Loaded="SQLiteDemo_Loaded">
@@ -10,11 +11,13 @@
     <VerticalStackLayout Spacing="20" Padding="20">
 
         <Picker x:Name="projectsPicker" 
+                x:DataType="ent:Project"
                 Title="Select a Project"
                 ItemDisplayBinding="{Binding Name}"
                 SelectedIndexChanged="OnProjectSelected" />
 
-        <CollectionView x:Name="tasksCollection">
+        <CollectionView x:Name="tasksCollection"
+                        x:DataType="ent:Task">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Label Text="{Binding Description}" 
